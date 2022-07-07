@@ -8,16 +8,15 @@ I opened the downloadable file in Wireshark. I extracted the file instructions.t
 I decided to analyze each file individually.
 ### instruction.txt
 Decrpyting the script inside instructions.txt from ROT13 I get the following.
-```TFTPDOESNTENCRYPTOURTRAFFICSOWEMUSTDISGUISEOURFLAGTRANSFER.FIGUREOUTAWAYTOHIDETHEFLAGANDIWILLCHECKBACKFORTHEPLAN```
+<br><br>```TFTPDOESNTENCRYPTOURTRAFFICSOWEMUSTDISGUISEOURFLAGTRANSFER.FIGUREOUTAWAYTOHIDETHEFLAGANDIWILLCHECKBACKFORTHEPLAN```<br><br>
 This decryption is telling us to look into plan.
 ### plan
 Decrypting the script inside plan from ROT13 I get the following.
-```IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS```
+<br><br>```IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS```<br><br>
 The decryption mentions the use of program, so, I decided to look into program.deb which pointed me to steghide and I decided to look into it.
 ### pictures
-[picture1.bmp]
-[picture2.bmp]
-[picture3.bmp]
+![picture1.bmp](https://github.com/caligo-phantom/Trivial-Flag-Transfer-Protocol/blob/main/picture1.bmp)<br>
+![picture3.bmp](https://github.com/caligo-phantom/Trivial-Flag-Transfer-Protocol/blob/main/picture3.bmp)<br>
 Using the command `steghide info picture3.bmp` on each picture individually I finally found the flag to be in picture3.bmp. The passphrase was 'DUEDILIGENCE'as mention in plan.<br>
 Finally using the command `steghide extract -sf picture3.bmp` I obtained the file flag.txt with the flag inside it.
 ## Flag
